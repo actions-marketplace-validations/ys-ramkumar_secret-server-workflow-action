@@ -7,10 +7,10 @@ var properties = propertiesReader(config_path);
 
 var accessTokenUrl = properties.get('secret.server.accessTokenUrl');
 var rootApiUrl = properties.get('secret.server.rootApiUrl');
-var grantType = properties.get('secret.server.grantType');
+var grantType = properties.get('secret.server.grant_type') || 'password';
 var username = core.getInput('username') || properties.get('secret.server.username') || '';
 var password = core.getInput('password') || properties.get('secret.server.password') || '';
-var secretId = core.getInput('secret_id') || properties.get('secret.server.secretId');
+var secretId = core.getInput('secret_id') || properties.get('secret.server.secret_id');
 
 // Fetch Token 
 var options = { method: 'POST',
@@ -39,6 +39,7 @@ request(options, function (error, response, body) {
     var secretDetails = JSON.parse(body);
     for(var i in secretDetails['items']){
         core.setOutput(''+secretDetails['items'][i]['slug'],secretDetails['items'][i]['itemValue']);
+        core.exportVariable(('SS_'+secretDetails['items'][i]['slug']).toUpperCase(), secretDetails['items'][i]['itemValue']);
     }
    });
 });
