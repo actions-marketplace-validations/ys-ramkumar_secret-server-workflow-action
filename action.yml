@@ -1,4 +1,4 @@
-name: 'Secret Server GitHub action'
+name: 'Secret Server Auth Action'
 author: 'C52866'
 description: 'A custom github workflow action to fetch details from Secret Server'
 inputs:
