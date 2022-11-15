@@ -1,0 +1,25 @@
+name: 'Secret Server GitHub action'
+author: 'C52866'
+description: 'A custom github workflow action to fetch details from Secret Server'
+inputs:
+  config_file:  # id of input
+    description: 'Secret Server Configuration File Location'
+    required: false
+    default: './secret-server.properties'
+  username:  # id of input
+    description: 'Secret Server Username'
+    required: false 
+  password:  # id of input
+    description: 'Secret Server Password'
+    required: false 
+  secret_id:  # id of input
+    description: 'Secret Server Auth ID'
+    required: true
+outputs:
+  access-key: # id of output
+    description: 'Access Key'
+  secret-key: # id of output
+    description: 'Secret Key'
+runs:
+  using: 'node12'
+  main: 'index.js'

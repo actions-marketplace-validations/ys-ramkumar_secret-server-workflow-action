@@ -1,0 +1,16 @@
+{
+  "name": "at-secret-server-github-action",
+  "version": "1.0.0",
+  "description": "Secret Server Github Action",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "C52866",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "properties-reader": "^2.2.0",
+    "request": "^2.88.2"
+  }
+}
