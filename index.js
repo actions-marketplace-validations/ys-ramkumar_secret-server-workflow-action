@@ -1,5 +1,6 @@
 const core = require("@actions/core");
-const fetch = require("node-fetch");
+const fetch = (...args) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const propertiesReader = require("properties-reader");
 
 const config_path =
