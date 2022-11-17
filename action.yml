@@ -1,5 +1,5 @@
 name: 'Secret Server Auth Action'
-author: 'C52866'
+author: 'YS Ram Kumar'
 description: 'A custom github workflow action to fetch details from Secret Server'
 inputs:
   config_file:  # id of input
@@ -21,5 +21,5 @@ outputs:
   secret-key: # id of output
     description: 'Secret Key'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
